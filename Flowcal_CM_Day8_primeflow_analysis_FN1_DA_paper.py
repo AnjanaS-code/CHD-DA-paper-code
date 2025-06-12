@@ -5,7 +5,7 @@
 # 
 # #https://flowcal.readthedocs.io/en/latest/fundamentals/density_gate.html
 
-# In[27]:
+
 
 
 ### importing packages for flowCal
@@ -21,7 +21,6 @@ import matplotlib.pyplot as plt
 # # Prime flow probes - FN1, RPL13A
 # 
 
-# In[28]:
 
 
 ## directory
@@ -31,7 +30,6 @@ os.chdir("/Users/anjana_home/Desktop/Gary_Hon/Data/FACS/Cardiomyocytes")
 
 # # files
 
-# In[29]:
 
 
 ## load fcs data
@@ -45,17 +43,11 @@ enh5_probe = FlowCal.io.FCSData('enh5 ko probe.fcs')
 enh5_noprobe = FlowCal.io.FCSData('enh5 ko no probe.fcs')
 
 
-# In[ ]:
-
-
-
-
-
 # # GATING
 
 # # Gating the cells on FSC-H and SS-H plot based on density gating
 
-# In[30]:
+
 
 
 ##Function for gating
@@ -78,8 +70,6 @@ def gate_plot(gatedcells):
     
 
 
-# In[31]:
-
 
 # Function to plot FN1 and RPL13A histograms
 
@@ -95,15 +85,9 @@ def fluroscence_hist(ungated_sample,gated_sample,channel):
     return(hist_plot)
 
 
-# In[ ]:
-
-
-
-
 
 # # wt probe sample
 
-# In[32]:
 
 
 s_g2 = flowcal_gating(wt_probe,0.45)
@@ -112,8 +96,6 @@ gate_plot(s_g2)
 
 # # FN1
 
-# In[33]:
-
 
 fluroscence_hist(wt_probe,s_g2,"FL3-H")
 plt.savefig('QC_WT_probe_FN1.pdf') 
@@ -121,23 +103,17 @@ plt.savefig('QC_WT_probe_FN1.pdf')
 
 # # RPL13A
 
-# In[154]:
-
 
 fluroscence_hist(wt_probe,s_g2,"FL1-H")
 #plt.show()
 plt.savefig('QC_WT_probe_RPL13A.pdf') 
 
 
-# In[ ]:
-
 
 
 
 
 # # wt no probe sample
-
-# In[156]:
 
 
 #FSC, SSC gating
@@ -148,7 +124,6 @@ gate_plot(s_g3)
 
 # # FN1
 
-# In[157]:
 
 
 fluroscence_hist(wt_noprobe,s_g3,"FL3-H")
@@ -157,33 +132,17 @@ plt.savefig('QC_WT_noprobe_FN1.pdf')
 
 # # RPL13A
 
-# In[158]:
-
 
 fluroscence_hist(wt_noprobe,s_g3,"FL1-H")
 #plt.show()
 plt.savefig('QC_WT_noprobe_RPL13A.pdf') 
 
 
-# In[ ]:
 
 
 
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
@@ -191,7 +150,7 @@ plt.savefig('QC_WT_noprobe_RPL13A.pdf')
 
 # # TBX5 KO probe
 
-# In[159]:
+
 
 
 
@@ -202,7 +161,7 @@ plt.show()
 
 # # FN1
 
-# In[39]:
+
 
 
 fluroscence_hist(TBX5_probe,s_g4,"FL3-H")
@@ -211,7 +170,7 @@ fluroscence_hist(TBX5_probe,s_g4,"FL3-H")
 plt.savefig('QC_TBX5KO_probe_FN1.pdf') 
 
 
-# In[ ]:
+
 
 
 
@@ -219,29 +178,18 @@ plt.savefig('QC_TBX5KO_probe_FN1.pdf')
 
 # # RPL13A
 
-# In[40]:
-
 
 fluroscence_hist(TBX5_probe,s_g4,"FL1-H")
 #plt.show()
 plt.savefig('QC_TBX5KO_probe_RPL13A.pdf') 
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
 
 
 # #  TBX5 KO no probe
-
-# In[160]:
 
 
 
@@ -254,8 +202,6 @@ plt.show()
 
 # # FN1
 
-# In[161]:
-
 
 fluroscence_hist(TBX5_noprobe,s_g5,"FL3-H")
 #plt.show()
@@ -264,7 +210,7 @@ plt.savefig('QC_TBX5KO_noprobe_FN1.pdf')
 
 # # RPL13A
 
-# In[162]:
+
 
 
 fluroscence_hist(TBX5_noprobe,s_g5,"FL1-H")
@@ -272,13 +218,7 @@ fluroscence_hist(TBX5_noprobe,s_g5,"FL1-H")
 #plt.savefig('QC_TBX5KO_noprobe_RPL13A.pdf') 
 
 
-# In[ ]:
 
-
-
-
-
-# In[ ]:
 
 
 
@@ -286,7 +226,6 @@ fluroscence_hist(TBX5_noprobe,s_g5,"FL1-H")
 
 # # Enh3 KO probe
 
-# In[163]:
 
 
 
@@ -296,7 +235,6 @@ gate_plot(s_g6)
 
 # # FN1
 
-# In[45]:
 
 
 fluroscence_hist(enh3_probe,s_g6,"FL3-H")
@@ -306,8 +244,6 @@ plt.savefig('QC_enh3KO_probe_FN1.pdf')
 
 # # RPL13A
 
-# In[46]:
-
 
 fluroscence_hist(enh3_probe,s_g6,"FL1-H")
 #plt.show()
@@ -315,8 +251,6 @@ plt.savefig('QC_enh3KO_probe_RPL13A.pdf')
 
 
 # # Enh3 KO no probe
-
-# In[164]:
 
 
 
@@ -328,7 +262,6 @@ gate_plot(s_g7)
 
 # # FN1
 
-# In[48]:
 
 
 fluroscence_hist(enh3_noprobe,s_g7,"FL3-H")
@@ -339,7 +272,6 @@ plt.savefig('QC_enh3KO_noprobe_FN1.pdf')
 
 # # RPL13A
 
-# In[49]:
 
 
 fluroscence_hist(enh3_noprobe,s_g7,"FL1-H")
@@ -350,7 +282,6 @@ plt.savefig('QC_enh3KO_noprobe_RPL13A.pdf')
 
 # # Enh5 KO probe
 
-# In[165]:
 
 
 s_g8 = flowcal_gating(enh5_probe,0.45)
@@ -359,7 +290,6 @@ gate_plot(s_g8)
 
 # # FN1
 
-# In[51]:
 
 
 fluroscence_hist(enh5_probe,s_g8,"FL3-H")
@@ -369,7 +299,6 @@ plt.savefig('QC_enh5KO_probe_FN1.pdf')
 
 # # RPL13A
 
-# In[166]:
 
 
 fluroscence_hist(enh5_probe,s_g8,"FL1-H")
@@ -377,15 +306,9 @@ fluroscence_hist(enh5_probe,s_g8,"FL1-H")
 #plt.savefig('QC_enh5KO_probe_RPL13A.pdf') 
 
 
-# In[ ]:
-
-
-
 
 
 # # Enh5 KO no probe
-
-# In[167]:
 
 
 s_g9 = flowcal_gating(enh5_noprobe,0.45)
@@ -394,7 +317,7 @@ gate_plot(s_g9)
 
 # # FN1
 
-# In[54]:
+
 
 
 fluroscence_hist(enh5_noprobe,s_g9,"FL3-H")
@@ -404,7 +327,7 @@ plt.savefig('QC_enh5KO_noprobe_FN1.pdf')
 
 # # RPL13A
 
-# In[55]:
+
 
 
 fluroscence_hist(enh5_noprobe,s_g9,"FL1-H")
@@ -414,7 +337,6 @@ plt.savefig('QC_enh5KO_noprobe_RPL13A.pdf')
 
 # # subsetting the fluroscence channels after gating
 
-# In[61]:
 
 
 ##  probe samples
@@ -436,7 +358,6 @@ enh5_probe_RPL13A = s_g8[:, ['FL1-H']] ##RPL13A##
 enh5_probe_FN1 = s_g8[:, ['FL3-H']] ###FN1##
 
 
-# In[62]:
 
 
 ## No probe samples
@@ -462,8 +383,6 @@ enh5_noprobe_FN1 = s_g9[:, ['FL3-H']] ###FN1##
 
 # # FN1 intensity
 
-# In[69]:
-
 
 x_pos = [0,0.5,1,1.5]
 x_labels = ['Wildtype','TBX5 KO','Enh3 KO','Enh5 KO']
@@ -484,8 +403,6 @@ plt.savefig('FN1_intensity.pdf')
 
 
 # # RPL13A intensity
-
-# In[70]:
 
 
 x_pos = [0,0.5,1,1.5]
@@ -508,7 +425,7 @@ plt.savefig('RPL13A_intensity.pdf')
 
 # # Normalizing the target mRNA intensity with control (RPL13A) at a single cell level
 
-# In[71]:
+
 
 
 ## ratio of the CM markers/RPL13A
@@ -524,7 +441,7 @@ enh5_probe_FN1_ratio = enh5_probe_FN1/enh5_probe_RPL13A
 
 # # Violin plots of the normalized FN1 intensity
 
-# In[124]:
+
 
 
 x_pos = [0,0.5,1,1.5]
@@ -551,8 +468,6 @@ plt.savefig('FN1_RPL13A_ratio.pdf')
 
 # # statistical tests 
 
-# In[173]:
-
 
 # statistical tests###
 
@@ -577,7 +492,7 @@ from scipy.stats import mannwhitneyu, normaltest
 
 # # normality test
 
-# In[174]:
+
 
 
 #log normal test
@@ -588,7 +503,6 @@ fig = sm.qqplot(wt_probe_FN1_ratio, line='45')
 plt.show()
 
 
-# In[176]:
 
 
 sm.qqplot(TBX5_probe_FN1_ratio, line='45')
@@ -596,7 +510,7 @@ sm.qqplot(TBX5_probe_FN1_ratio, line='45')
 plt.show()
 
 
-# In[178]:
+
 
 
 sm.qqplot(enh3_probe_FN1_ratio, line='45')
@@ -604,15 +518,11 @@ sm.qqplot(enh3_probe_FN1_ratio, line='45')
 plt.show()
 
 
-# In[179]:
-
 
 sm.qqplot(enh5_probe_FN1_ratio, line='45')
 
 plt.show()
 
-
-# In[188]:
 
 
 #KS test
@@ -629,7 +539,6 @@ print("Enh5_FN1_ratio: ", kstest_results[3])
 
 # # using non parametric mannwhitneyu test
 
-# In[193]:
 
 
 stat_results = [mannwhitneyu(TBX5_probe_FN1_ratio,wt_probe_FN1_ratio),
@@ -645,7 +554,7 @@ pvalues = [result.pvalue for result in stat_results]
 
 # # EXTRA QC CODE!
 
-# In[135]:
+
 
 
 plt.bar("WT",wt_probe_FN1_ratio.mean())
@@ -662,7 +571,6 @@ plt.show()
 
 # # RPL13A
 
-# In[250]:
 
 
 ## No probe violin plots for all samples 
@@ -687,7 +595,6 @@ plt.ylabel("WT No probe RPL13A intensity", fontsize=16)
 
 # # FN1
 
-# In[251]:
 
 
 x_pos = [0,0.5,1,1.5]
